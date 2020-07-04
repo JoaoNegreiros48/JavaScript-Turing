@@ -1,0 +1,124 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+img{
+	height: 100%;
+	width: 100%;
+	border-radius: 10px;
+}
+
+/*Navbar*/
+
+.Navbar{
+	position: absolute;
+	height: 8%;
+	width: 100%;
+	border-bottom: 1px solid #828282;
+	opacity: 80%;
+}
+.Navbar .links{
+	position: absolute;
+	height: 100%;
+	left: 8%;
+	top: 30%;
+	width: 90%;
+}
+.Navbar .links a{
+	text-decoration: none;
+	color: black;
+	margin-left: 5%;
+}
+.Navbar .links a:hover{
+	color: #828282;
+}
+
+/*Navbar*/
+
+/*Nota*/
+
+.Nota{
+	position: absolute;
+	left: 1%;
+	top: 20%;
+	opacity: 95%;
+}
+
+/*Nota*/
+
+/*Galeria*/
+
+.Galeria{
+	position: absolute;
+	left: 15%;
+	top: 20%;
+	height: 70%;
+	width: 70%;
+}
+
+/* Imagem da esquerda */
+
+.Galeria .left{
+	position: absolute;
+	left: 5%;
+	top: 10%;
+	height: 80%;
+	width: 40%;
+}
+/* Imagem da esquerda */
+
+/*Texto do meio*/
+
+.Tcenter{
+	position: absolute;
+	left: 48%;
+	top: 48%;
+	opacity: 100%;
+	font-size: 30px;
+}
+
+/*Texto do meio*/
+
+/* Imagem da direita */
+
+.Galeria .right{
+	position: absolute;
+	right: 5%;
+	top: 10%;
+	height: 80%;
+	width: 40%;
+}
+
+/* Imagem da direita */
+
+/* Botão */
+
+.Galeria input[type="button"]{
+	position: absolute;
+	top: 100%;
+	left: 43%;
+	height: 9%;
+	width: 15%;
+	border-radius: 30px;
+	border-width: 0;
+	background-color: #03cffc;
+	color: white;
+	font-size: 18px;
+}
+.Galeria input[type="button"]:hover{
+	background-color: #08a2c4;
+	display: block/none
+}
+
+/* Botão */
+/*Galeria CSS*/
+
+/* Créditos */
+#creditos{
+	position: absolute;
+	left: 10%;
+	top: 10%;
+	opacity: 95%;
+}
+/* Créditos */
