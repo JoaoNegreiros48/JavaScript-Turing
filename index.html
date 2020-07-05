@@ -50,23 +50,29 @@
 	<!-- Galeria -->
 
 	<!-- Créditos -->
-	<label for="" id="creditos">*Todas as imagens presentes no site que foram geradas por IA presentes no teste são de total propriedade a Generated Photos (https://generated.photos/). E o intuito do teste é apenas acadêmico*</label>
+	<label for="" id="creditos">*Todas as imagens presentes no site que foram geradas por IA são de total propriedade da Generated Photos (https://generated.photos/). E o intuito do teste é apenas acadêmico*</label>
 	<!-- Créditos -->
 
 	<script>
+		// As variáveis abaixo contém os endereços das imagens. *imageLeft - IA* *imageRight - reais*
 		var imageLeft = ["photos/01.jpg","photos/02.jpg","photos/03.jpg","photos/04.jpg","photos/05.jpg","photos/06.jpg","photos/07.jpg","photos/08.jpg","photos/09.jpg","photos/10.jpg",];
 		var imageRight = ["photos/11.jpg","photos/12.jpg","photos/13.jpg","photos/14.jpg","photos/15.jpg","photos/16.jpg","photos/17.jpg","photos/18.jpg","photos/19.jpg","photos/20.jpg",];
+
+		// Função para pegar uma imagem aleatória e colocar na img esquerda
 		function carregaImagemLeft(){
 			document.getElementById('imgLeft').src = imageLeft[Math.floor(Math.random() * 10)];
 		}
+		// Função para pegar uma imagem aleatória e colocar na img direita
 		function carregaImagemRight(){
 			document.getElementById('imgRight').src = imageRight[Math.floor(Math.random() * 10)];
 		}
+		// Função para selecionar uma das imagens (direita ou esquerda)
 		function Selecionar(local){
 			selecionado = local;
 			console.log('img' + local);
 			document.getElementById('img' + local).style = "box-shadow: 5px 5px 5px rgba(0,0,0,0.5);";
 		}
+		// Caso a imagem selecionada for a esquerda ele mostra o correto. Se não for mostra o errado
 		function MostraResultados(){
 			if (selecionado == "Left"){
 				document.getElementById('imgLeft').src = "photos/correto.png";
