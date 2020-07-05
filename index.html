@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
 </head>
-<body onload="carregaImagemLeft(), carregaImagemRight()">
+<body onload="Posicao()">
 
 	<!-- Nav Bar -->
 	<div class="Navbar">
@@ -54,31 +54,50 @@
 	<!-- Créditos -->
 
 	<script>
-		// As variáveis abaixo contém os endereços das imagens. *imageLeft - IA* *imageRight - reais*
-		var imageLeft = ["photos/01.jpg","photos/02.jpg","photos/03.jpg","photos/04.jpg","photos/05.jpg","photos/06.jpg","photos/07.jpg","photos/08.jpg","photos/09.jpg","photos/10.jpg",];
-		var imageRight = ["photos/11.jpg","photos/12.jpg","photos/13.jpg","photos/14.jpg","photos/15.jpg","photos/16.jpg","photos/17.jpg","photos/18.jpg","photos/19.jpg","photos/20.jpg",];
+		// Os arrays abaixo contém os endereços das imagens.
+		var imageIA = ["photos/IA/01.jpg","photos/IA/02.jpg","photos/IA/03.jpg","photos/IA/04.jpg","photos/IA/05.jpg","photos/IA/06.jpg","photos/IA/07.jpg","photos/IA/08.jpg","photos/IA/09.jpg","photos/IA/10.jpg",];
 
-		// Função para pegar uma imagem aleatória e colocar na img esquerda
-		function carregaImagemLeft(){
-			document.getElementById('imgLeft').src = imageLeft[Math.floor(Math.random() * 10)];
+		var imageReais = ["photos/Reais/11.jpg","photos/Reais/12.jpg","photos/Reais/13.jpg","photos/Reais/14.jpg","photos/Reais/15.jpg","photos/Reais/16.jpg","photos/Reais/17.jpg","photos/Reais/18.jpg","photos/Reais/19.jpg","photos/Reais/20.jpg",];
+
+		var posicoes_possiveis = ["esquerda", "direita"]; // Array que contém as possibilidades de posição
+
+		// Função para pegar uma imagem aleatória e colocar em uma posição aleatória
+		posicao = posicoes_possiveis[Math.floor(Math.random() * 2)]; // Seleciona a posição de forma aleatória
+		function Posicao(){
+			if (posicao == "esquerda") {
+				document.getElementById('imgLeft').src = imageIA[Math.floor(Math.random() * 10)];
+				document.getElementById('imgRight').src = imageReais[Math.floor(Math.random() * 10)];
+			}
+			if (posicao == "direita") {
+				document.getElementById('imgRight').src = imageIA[Math.floor(Math.random() * 10)];
+				document.getElementById('imgLeft').src = imageReais[Math.floor(Math.random() * 10)];
+			}
 		}
-		// Função para pegar uma imagem aleatória e colocar na img direita
-		function carregaImagemRight(){
-			document.getElementById('imgRight').src = imageRight[Math.floor(Math.random() * 10)];
-		}
-		// Função para selecionar uma das imagens (direita ou esquerda)
+
+		// Fução para selecionar a imagem
 		function Selecionar(local){
 			selecionado = local;
 			console.log('img' + local);
 			document.getElementById('img' + local).style = "box-shadow: 5px 5px 5px rgba(0,0,0,0.5);";
 		}
-		// Caso a imagem selecionada for a esquerda ele mostra o correto. Se não for mostra o errado
+		
+		// Função para mostrar os resultados
 		function MostraResultados(){
 			if (selecionado == "Left"){
-				document.getElementById('imgLeft').src = "photos/correto.png";
+				if (posicao == "esquerda") {
+					document.getElementById('imgLeft').src = "photos/correto.png";
+				}
+				if (posicao == "direita") {
+					document.getElementById('imgLeft').src = "photos/errado.png";
+				}
 			}
 			if (selecionado == "Right"){
-				document.getElementById('imgRight').src = "photos/errado.png";
+				if (posicao == "esquerda") {
+					document.getElementById('imgRight').src = "photos/errado.png";
+				}
+				if (posicao == "direita") {
+					document.getElementById('imgRight').src = "photos/correto.png";
+				}
 			}
 		}
 	</script>
