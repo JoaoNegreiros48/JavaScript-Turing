@@ -1,2 +1,2 @@
 # ProjetoTuring
-É um projeto que utilizei para aprender algumas técnicas de Js.
+Projeto que utilizei para aprender algumas técnicas de Js.
